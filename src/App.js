@@ -31,8 +31,8 @@ class App extends React.Component {
     return (
       <div>
         <Wrapper>
-          <TodoList todos={this.state.todos} />
           <AddTodo getTodos={this.getTodos} />
+          <TodoList todos={this.state.todos} getTodos={this.getTodos} />
         </Wrapper>
       </div>
     );

@@ -7,8 +7,8 @@ class AddTodo extends React.Component {
     super(props);
     this.state = {
       todo: {
-        name: 'Tasi',
-        message: 'Hatodik'
+        name: '',
+        message: ''
       }
     };
 

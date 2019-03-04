@@ -1,6 +1,7 @@
 /* global alert */
 
 import React from 'react';
+import axios from 'axios';
 import './TodoItem.css';
 import {
   Card, CardText, CardBody,
@@ -19,6 +20,13 @@ class TodoItem extends React.Component {
     this.setState({ checked: !this.state.checked });
   }
 
+  delete () {
+    axios.delete(`http://localhost:8080/tasks/${this.props.item.id}`).then(response => {
+      console.log(response);
+      this.props.getTodos();
+    });
+  }
+
   render () {
     return (
       <div className='card'>
@@ -28,6 +36,7 @@ class TodoItem extends React.Component {
             <CardText>{this.props.item.message}</CardText>
           </CardBody>
           <Button color='primary' onClick={this.check.bind(this)}>{this.state.checked ? 'Checked' : 'Check'}</Button>
+          <Button color='danger' onClick={this.delete.bind(this)}>Delete</Button>
         </Card>
       </div>
     );
