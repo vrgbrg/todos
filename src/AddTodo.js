@@ -35,9 +35,9 @@ class AddTodo extends React.Component {
   render () {
     return (
       <form>
-        <label>Name</label>
+        <label>Awsome name</label>
         <input type='text' id='name' name='name' placeholder='Name' value={this.state.todo.name} onChange={this.changeField('name')} />
-        <label>Message</label>
+        <label>Awsome message</label>
         <input type='text' id='message' name='message' placeholder='Message' value={this.state.todo.message} onChange={this.changeField('message')} />
         <input type='submit' value='Save' onClick={this.submit} />
       </form>
